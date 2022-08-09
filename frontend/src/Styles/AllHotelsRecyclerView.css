@@ -1,6 +1,8 @@
 .btn-3 {
 
-    line-height: 39px;
+
+filter: drop-shadow(-12.0513px -6.02564px 14.4615px #FFFFFF) drop-shadow(8.4359px 10.8462px 26.5128px rgba(206, 206, 206, 0.8));
+    /* line-height: 39px; */
     padding: 0;
     background: #a1c4fd;
     color: white;
@@ -9,6 +11,7 @@
     /* filter: drop-shadow(-12.0513px -6.02564px 14.4615px #FFFFFF) drop-shadow(8.4359px 10.8462px 26.5128px rgba(206, 206, 206, 0.8)); */
     background: #1583E9;
 border-radius: 16px;
+border-width: 0px;
   }
   .btn-3:hover{
   
@@ -33,14 +36,16 @@ border-radius: 16px;
     width:70%;
     border:3px solid #74D5DD;
     margin-top:40px;
-    background-color:#CAF0F8;
+    background-color:#FDFDFD;
+    margin-right: 50px;
+    border-radius:30px;
   }
 
   .wrapperDiv{
 
 
     margin-bottom: 40px;
-    
+    margin-right: 124px;
   }
 
   a:hover {
