@@ -1,16 +1,58 @@
 .btn-3 {
+
     line-height: 39px;
     padding: 0;
-    background: white  ;
-    color :black;
-  }
-  .btn-3:hover{
     background: #a1c4fd;
     color: white;
+    margin-bottom: 10px;
+    padding:10px;
+    /* filter: drop-shadow(-12.0513px -6.02564px 14.4615px #FFFFFF) drop-shadow(8.4359px 10.8462px 26.5128px rgba(206, 206, 206, 0.8)); */
+    background: #1583E9;
+border-radius: 16px;
+  }
+  .btn-3:hover{
+  
+    color: #fdec6e;
+    text-shadow:0px 0px 30px #fdec6e;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
   }
   
   .title{
 
 
     font-family: maven-serif;
+    color :#003249;
+    
+  }
+
+  .card{
+    margin-left:252px;
+    width:70%;
+    border:3px solid #74D5DD;
+    margin-top:40px;
+    background-color:#CAF0F8;
+  }
+
+  .wrapperDiv{
+
+
+    margin-bottom: 40px;
+    
+  }
+
+  a:hover {
+    color: #fdec6e;
+    text-shadow:0px 0px 30px #fdec6e;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+
+  .description{
+
+    color : #0077b6;
   }

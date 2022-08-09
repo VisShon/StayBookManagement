@@ -18,7 +18,7 @@ function AllHotelsRecyclerView() {
     description="XV-2463-N, Nalwa St, Chuna Mandi, Paharganj, New Delhi, Delhi 110055"
   />
   <Card
-    title="hotel jai bala ji ( 23690 )"
+    title="Hotel Jai Bala Ji ( 23690 )"
     description="9918, Plot No. 9918, Street, Multani Dhanda, Paharganj, Delhi, 110055"
   />
   <Card
