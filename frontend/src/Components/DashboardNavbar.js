@@ -34,7 +34,7 @@ function DashboardNavbar() {
     </div>
      <div className = "hotelName">Hotel Name</div>
     <img  className="moreAppsImage" src = {moreApps} alt  ="No image found!!"></img>
-    <div className = "moreAppsText">More Apps</div>
+    {/* <div className = "moreAppsText">More Apps</div> */}
     
 
 
