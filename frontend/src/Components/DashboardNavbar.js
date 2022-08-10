@@ -5,6 +5,7 @@ import calenderImage from '../Photos/calendarNew.png';
 import inventoryImage from '../Photos/stock.png';
 import ButtonImage from '../Photos/searchButton.png';
 import '../Styles/DashboardNavbar.css';
+import moreApps from '../Photos/other.png';
 
 function DashboardNavbar() {
   return (
@@ -31,8 +32,12 @@ function DashboardNavbar() {
   
     
     </div>
-    <div className = "rightDiv"></div>
-<div className = "hotelName">Hotel Name</div>
+     <div className = "hotelName">Hotel Name</div>
+    <img  className="moreAppsImage" src = {moreApps} alt  ="No image found!!"></img>
+    <div className = "moreAppsText">More Apps</div>
+    
+
+
     </div>
   )
 }

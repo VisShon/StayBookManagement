@@ -2,8 +2,9 @@
  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 .wrapperDiv{
+  
     flex-direction: row;
-    justify-content: center;
+  
  
 }
 .leftDiv{
@@ -15,9 +16,11 @@
 }
 
 .rightDiv{
-    display: flex;
+     display: flex;
     justify-content: right;
-    flex-direction: row;
+
+    
+    flex-direction: row; 
 
 }
 
@@ -151,9 +154,46 @@
     margin-top: 17px;
  }
 
- .hotelName{
+ .hotelName
+ {
 
+    font-size: 20px;
+    color: gold;
+    font-family: Maven Pro;
     position: relative;
     top: -40px;
-    left: 483px;
+    left: 79px;
+    font-style: bold;
+    margin-left: 728px;
  }
+
+ .moreAppsImage{
+
+    position: relative;
+    max-height: 30px;
+    max-width: 30px;
+    top: -46px;
+    left: 100px;
+    top: -66px;
+    margin-left: 891px;
+ }
+
+ .moreAppsText{
+
+    visibility: hidden;
+   
+    left: 500px;
+    top: 500px;
+ }
+
+ .moreAppsImage:hover + .moreAppsText {
+    display: block;
+    color: rgb(71, 0, 65);
+    font-size: 10px;
+    font-weight: bold;
+    visibility : visible;
+    
+    margin-top:-60px;
+    margin-left: 1085px;
+
+}
