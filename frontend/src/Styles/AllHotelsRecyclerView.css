@@ -34,7 +34,8 @@ border-width: 0px;
   .card{
     margin-left:252px;
     width:70%;
-    border:3px solid #74D5DD;
+    
+    border: 3px solid #ddd074;
     margin-top:40px;
     background-color:#FDFDFD;
     margin-right: 50px;
@@ -44,7 +45,7 @@ border-width: 0px;
   .wrapperDiv{
 
 
-    margin-bottom: 40px;
+    margin-bottom: -18px;
     margin-right: 124px;
   }
 

@@ -4,7 +4,8 @@ import BookingsCard from '../Cards/BookingsCard';
 function BookingsArea() {
   return (
     <div class="main-container">
-   
+   <div className = "GoodMorning">Good Morning </div>
+   <div className = "text">Here is what you have for the today</div>
     <div class="cards">
      
      <BookingsCard title = "New Bookings" number= "0" count = "1"/>

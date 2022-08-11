@@ -3,7 +3,10 @@ import '../Styles/AllHotelsRecyclerView.css';
 import Card from '../Cards/Card.js';
 function AllHotelsRecyclerView() {
   return (
+    <div>
+    
     <div className = "wrapperDiv">
+
      <Card
     title="Hotel Aira Xing by Staybook ( 23380 )"
     description="1/5, Desh Bandhu Gupta Rd, opposite Police Station, Motia Khan, Paharganj, New Delhi, Delhi 110055"
@@ -35,6 +38,8 @@ function AllHotelsRecyclerView() {
     description="65, Desh Bandhu Gupta Rd, Arya Nagar, Paharganj, Delhi, 110055"
   />
   
+  </div>
+
   </div>
 
   

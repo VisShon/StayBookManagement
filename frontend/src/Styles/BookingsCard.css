@@ -33,6 +33,7 @@
   
   .heading__link {
     text-decoration: none;
+    font-size: 40px;
   }
   
   .heading__credits .heading__link {
@@ -77,6 +78,7 @@
     /* color: rgba(255, 255, 255, 0.9); */
     color :black;
     font-size:20px;
+    font-size: 40px;
   }
   
   .card__link::after {
@@ -87,12 +89,12 @@
     width: 0%;
     height: 3px;
     background-color: rgba(255, 255, 255, 0.6);
-    transition: all 0.5s;
+   
   }
   
-  .card__link:hover::after {
+  /* .card__link:hover::after {
     width: 100%;
-  }
+  } */
   
   .card__exit {
     grid-row: 1/2;
@@ -109,6 +111,7 @@
     font-weight: 400;
     color: rgba(0, 0, 0, 0.953);
     font-size:16px;
+    font-size: 13px;
   }
   
   .card__apply {
@@ -119,23 +122,23 @@
   /* CARD BACKGROUNDS */
   
   .card-1 {
-    background: radial-gradient(#1fe4f5, #3fbafe);
+    background: radial-gradient(#FAC213, #FAC213);
   }
   
   .card-2 {
-    background: radial-gradient(#f2fbc1, #31d3cd);
+    background: radial-gradient(#f2fbc1, #FEF9A7);
   }
   
   .card-3 {
-    background: radial-gradient(#76b2fe, #b69efe);
+    background: radial-gradient(#F2DF3A, #F2DF3A);
   }
   
   .card-4 {
-    background: radial-gradient(#60efbc, #58d5c9);
+    background: radial-gradient(#F4E06D, #F4E06D);
   }
   
   .card-5 {
-    background: radial-gradient(#f588d8, #c0a3e5);
+    background: radial-gradient(#FFEE63, #FFEE63);
   }
   
   /* RESPONSIVE */

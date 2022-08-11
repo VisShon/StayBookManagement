@@ -146,4 +146,25 @@
       justify-content: center;
     }
   }
+
+  .GoodMorning{
+
+margin-bottom :20px;
+font-size:30px;
+align-items: flex-start;
+text-align: start;
+padding-left :20px;
+color : gold;
+
+  }
+
+  .text{
+
+    margin-bottom :20px;
+    font-size:25px;
+    align-items: flex-start;
+    text-align: start;
+    padding-left :20px;
+    color : #f1db35;
+      }
   
