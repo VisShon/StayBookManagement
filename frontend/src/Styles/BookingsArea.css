@@ -12,6 +12,7 @@
   
   .main-container {
     padding: 10px;
+    margin-top: 16px;
   }
   
   /* HEADING */
@@ -62,6 +63,8 @@
     align-items: center;
     flex-direction: column; 
     padding-top: 15px;
+    width: 105px;
+    margin: 22px;
 }
   
   .card:hover {
@@ -149,13 +152,13 @@
 
   .GoodMorning{
 
-margin-bottom :20px;
-font-size:30px;
+    margin-bottom: 27px;
+    font-size: 40px;
 align-items: flex-start;
 text-align: start;
 padding-left :20px;
 color : gold;
-
+margin-left: 128px;
   }
 
   .text{
@@ -166,5 +169,6 @@ color : gold;
     text-align: start;
     padding-left :20px;
     color : #f1db35;
+    margin-left: 133px;
       }
   
