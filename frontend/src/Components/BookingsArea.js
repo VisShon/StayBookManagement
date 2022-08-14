@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Styles/BookingsArea.css';
-import BookingsCard from '../Cards/BookingsCard';
+import BookingsCard from '../Cards/BookingsCard.js';
 function BookingsArea() {
   return (
     <div class="main-container">

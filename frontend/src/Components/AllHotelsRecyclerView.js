@@ -5,7 +5,7 @@ function AllHotelsRecyclerView() {
   return (
     <div>
     
-    <div className = "wrapperDiv">
+    <div className = "WrapperDiv">
 
      <Card
     title="Hotel Aira Xing by Staybook ( 23380 )"

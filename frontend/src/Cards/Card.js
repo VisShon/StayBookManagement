@@ -1,8 +1,8 @@
 import React from 'react'
-
+import '../Styles/NewCard.css'
 function Card(props) {
     return (
-      <div className="card">
+      <div className="Card">
         <div className="card__body">
           
           <h2 className="title">{props.title}</h2>
