@@ -25,7 +25,7 @@ function MainDashboard() {
         </div>
         <div className="reservationContainer">
           <h1 style={{fontSize: '2rem',paddingLeft: '2rem', color: '#CF8F24'}}>Reservations </h1>
-          {reservationsData.map((res,i)=>(<ReservationCard name={res.name} email={res.email} checkIn={res.checkIn} checkOut={res.checkOut} amountPaid={res.amountPaid} />))}
+          {reservationsData.map((res,i)=>(<ReservationCard name={res.username} email={res.email} checkIn={res.checkIn} checkOut={res.checkOut} amountPaid={res.amountPaid} />))}
 
         </div>
 
