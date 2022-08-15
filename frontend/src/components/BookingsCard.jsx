@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/BookingsCard.css';
+import '../styles/BookingsCard.css';
 function BookingsCard(props) {
     var str= "card card-".concat(props.count);
   return (

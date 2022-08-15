@@ -32,3 +32,24 @@
     cursor: pointer;
     font-size: 20px;
   }
+
+
+
+
+.mainContainer {
+  width: screen;
+  background: linear-gradient(to right,#1999A8,#1CAF95);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left:2rem;
+  padding-right:2rem;
+
+  overflow: hidden;
+  
+}
+
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-between;
+}

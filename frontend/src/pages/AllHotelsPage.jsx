@@ -1,5 +1,5 @@
 import React from 'react';
-import AllHotelsRecyclerView from '../Components/AllHotelsRecyclerView.js';
+import AllHotelsRecyclerView from '../components/AllHotelsRecyclerView';
 import '../Styles/AllHotelsPage.css';
 function AllHotelsPage() {
   return (
