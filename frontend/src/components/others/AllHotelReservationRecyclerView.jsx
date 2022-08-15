@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Styles/AllHotelReservationRecyclerView.css'
-import HotelReservationCard from './cards/HotelReservationCard';
+import HotelReservationCard from '../ReservationCard';
 function AllHotelReservationRecyclerView() {
   return (
     <div className = "AllHotelReservationRecyclerViewWrapper">

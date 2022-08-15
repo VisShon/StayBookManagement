@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Styles/AllHotelsRecyclerView.css';
-import Card from './cards/Card.js';
+import Card from './Card.jsx';
 function AllHotelsRecyclerView() {
   return (
     <div>

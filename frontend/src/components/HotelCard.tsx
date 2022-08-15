@@ -1,0 +1,28 @@
+import React,{useEffect,useState} from 'react'
+import '../styles/HotelCard.css';
+import axios from 'axios'
+function HotelCard({title, setReservationsData,reservationsData,apiRef}:any) {
+
+  const [data,setData] = useState([]);
+  useEffect(() =>{
+    const getData = () =>{
+      const result = axios.get(`http://localhost:8000/api/${apiRef}/getReservations`).then(res=>setData(res.data))
+    }
+    getData();
+  },[])
+
+  const onClickHandler = () => {
+    setReservationsData(data);
+    console.log(data)
+    console.log(reservationsData)
+  }
+
+  return (  
+    <div className="card" onClick={onClickHandler}>
+      <h2 className ="cardTitle">{title}</h2>
+      <h2 className ="reservationCount">{data.length}</h2>
+   </div>
+  )
+}
+
+export default HotelCard;

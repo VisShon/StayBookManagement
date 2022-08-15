@@ -1,25 +1,34 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Navbar from '../components/NavBar';
-import BookingsCard from '../components/BookingsCard';
+import HotelCard from '../components/HotelCard';
+import ReservationCard from '../components/ReservationCard';
 import SearchBookings from '../components/SearchBookings';
-import AllHotelReservationRecyclerView from '../components/AllHotelReservationRecyclerView';
+import AllHotelReservationRecyclerView from '../components/others/AllHotelReservationRecyclerView';
 import '../styles/Dashboard.css'
-
+import data from '../data/hotelData.json'
 
 function MainDashboard() {
+
+  const [reservationsData,setReservationsData] =  useState([])
+
+
   return (
     <div className = "wrapper">
       <Navbar/>
       <div className="mainContainer">
-        <h2 style={{fontSize: '5rem'}}> Good Morning </h2>
-        <span style={{fontSize: '2rem',lineHeight: '0.25rem'}}>Here is what you have for the today</span>
-        <div className="cardsContainer">
-          <BookingsCard/>
+        <div className="headingContainer">
+          <h2 style={{fontSize: '5rem'}}> Good Morning </h2>
+          <span style={{fontSize: '2rem',lineHeight: '0.25rem'}}>Here is what you have for the today</span>
         </div>
-    </div>
-     {/* <SearchBookings />
-     <AllHotelReservationRecyclerView /> */}
-     
+        <div className="cardsContainer">
+          {data.map((hotel,i)=>(<HotelCard key={i} title={hotel.title} apiRef={hotel.apiRef} reservationsData={reservationsData} setReservationsData={setReservationsData}/>))}
+        </div>
+        <div className="reservationContainer">
+          <h1 style={{fontSize: '2rem',paddingLeft: '2rem', color: '#CF8F24'}}>Reservations </h1>
+          {reservationsData.map((reservation,i)=>(<ReservationCard />))}
+        </div>
+
+      </div>
     </div>
   )
 }

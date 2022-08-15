@@ -1,0 +1,44 @@
+
+  .card {
+    padding: 2rem;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid #CF8F24;
+    color:#CF8F24;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px #e8e8e8bf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+  
+  .card:hover {
+    box-shadow: 2px 2px 10px #c2c2c278;
+    transform: scale(1.01);
+  }
+  
+  .reservationCount {
+    margin-top:1rem;
+    background: linear-gradient(to right,#1999A8,#1CAF95);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:5rem;
+    font-weight: 800;
+  }
+  
+
+  .cardTitle {
+    height: 10%;
+    font-weight: 600;
+    font-size: larger;
+    margin-top:2rem;
+  }
+  
+  
+  @media (max-width: 1600px) {
+    .cards {
+      justify-content: center;
+    }
+  }
+  
