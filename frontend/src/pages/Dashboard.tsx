@@ -9,9 +9,9 @@ import data from '../data/hotelData.json'
 
 function MainDashboard() {
 
-  const [reservationsData,setReservationsData] =  useState([])
+  const [reservationsData,setReservationsData] =  useState<any[]>([])
 
-
+  console.log(reservationsData)
   return (
     <div className = "wrapper">
       <Navbar/>
@@ -25,7 +25,8 @@ function MainDashboard() {
         </div>
         <div className="reservationContainer">
           <h1 style={{fontSize: '2rem',paddingLeft: '2rem', color: '#CF8F24'}}>Reservations </h1>
-          {reservationsData.map((reservation,i)=>(<ReservationCard />))}
+          {reservationsData.map((res,i)=>(<ReservationCard name={res.name} email={res.email} checkIn={res.checkIn} checkOut={res.checkOut} amountPaid={res.amountPaid} />))}
+
         </div>
 
       </div>

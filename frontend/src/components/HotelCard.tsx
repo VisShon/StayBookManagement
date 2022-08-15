@@ -5,16 +5,14 @@ function HotelCard({title, setReservationsData,reservationsData,apiRef}:any) {
 
   const [data,setData] = useState([]);
   useEffect(() =>{
-    const getData = () =>{
-      const result = axios.get(`http://localhost:8000/api/${apiRef}/getReservations`).then(res=>setData(res.data))
+    const getData = async () =>{
+      const result = await axios.get(`http://localhost:8000/api/${apiRef}/getReservations`).then(res=>setData(Object.values(res.data)))
     }
     getData();
   },[])
 
   const onClickHandler = () => {
     setReservationsData(data);
-    console.log(data)
-    console.log(reservationsData)
   }
 
   return (  
