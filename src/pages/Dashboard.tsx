@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import Navbar from '../components/NavBar';
 import HotelCard from '../components/HotelCard';
 import ReservationCard from '../components/ReservationCard';
-import SearchBookings from '../components/SearchBookings';
+import SearchBookings from '../components/others/SearchBookings';
 import AllHotelReservationRecyclerView from '../components/others/AllHotelReservationRecyclerView';
 import '../styles/Dashboard.css'
 import data from '../data/hotelData.json'
