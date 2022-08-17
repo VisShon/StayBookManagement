@@ -14,7 +14,7 @@ function HotelReservationCard({name, email ,checkIn, checkOut, amountPaid}:any) 
           <h2 className="title">Check Out {checkOut}</h2>
         </>
 
-        <h5  style ={{color: '#CF8F24', fontSize:'1.5rem'}}>{amountPaid}</h5>
+        <h5  style ={{color: '#CF8F24', fontSize:'1.5rem'}}>&#8377;{amountPaid}</h5>
   </div>
   );
 }
