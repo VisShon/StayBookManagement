@@ -21,7 +21,7 @@ function MainDashboard() {
           <span style={{fontSize: '2rem',lineHeight: '0.25rem'}}>Here is what you have for the today</span>
         </div>
         <div className="cardsContainer">
-          {data.map((hotel,i)=>(<HotelCard key={i} title={hotel.title} apiRef={hotel.apiRef} reservationsData={reservationsData} setReservationsData={setReservationsData}/>))}
+          {data.map((hotel:any,i:number)=>(<HotelCard key={i} title={hotel.title} apiRef={hotel.apiRef} reservationsData={reservationsData} setReservationsData={setReservationsData}/>))}
         </div>
         <div className="reservationContainer">
           <h1 style={{fontSize: '2rem',paddingLeft: '2rem', color: '#CF8F24'}}>Reservations </h1>
