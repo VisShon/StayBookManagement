@@ -1,0 +1,46 @@
+
+@import 'colors';
+
+.navbar{
+    background-color: #ffffff;
+    width: screen;
+    height: 4rem;
+    box-shadow: 0 0 10px $shadow;
+    display: flex;
+    align-items: center;
+    position:sticky;
+    justify-content:space-between;
+    z-index: 10;
+    top: 0;
+}
+
+
+
+
+.logo{
+    height: 80%;
+    margin-left: 5em;
+}
+
+
+.Book {
+    font-family: "Maven Pro",sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    border: 1px solid $main;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition-duration: 0.5s;
+    font-size: 20px;
+    margin-right: 1rem;
+    color: black;
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
+}
+
+.Book:hover{
+    color: white;
+    background: $gradient;
+}

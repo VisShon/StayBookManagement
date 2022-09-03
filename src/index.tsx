@@ -1,14 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './pages/Dashboard';
+import Dashboard from './pages/Dashboard';
+import Navbar from './components/NavBar';
+import AddReservations from './pages/AddReservations';
+import { Routes,Route,BrowserRouter } from 'react-router-dom';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
+  
 );
+
+
 root.render(
+  
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/addReservations" element={<AddReservations/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

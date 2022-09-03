@@ -1,27 +1,32 @@
-import React,{useState} from 'react'
-import Navbar from '../components/NavBar';
+import React,{useState,useEffect} from 'react'
 import HotelCard from '../components/HotelCard';
 import ReservationCard from '../components/ReservationCard';
-import SearchBookings from '../components/others/SearchBookings';
-import AllHotelReservationRecyclerView from '../components/others/AllHotelReservationRecyclerView';
-import '../styles/Dashboard.css'
-import data from '../data/hotelData.json'
+import '../styles/Dashboard.scss';
+import axios from 'axios';
 
-function MainDashboard() {
+function MainDashboard({getData}:any) {
 
+  const [data,setData] =  useState<any[]>([])
   const [reservationsData,setReservationsData] =  useState<any[]>([])
+  
+  useEffect(()=>{
+    const getHotelData = async () => {
+      const result = await axios.get(`http://localhost:8000/api/getAllData`).then((value) => {
+        setData(Object.values(value.data))
+      });
+    }
+    getHotelData();
+  },[])
 
-  console.log(reservationsData)
   return (
     <div className = "wrapper">
-      <Navbar/>
       <div className="mainContainer">
         <div className="headingContainer">
           <h2 style={{fontSize: '5rem'}}> Good Morning </h2>
           <span style={{fontSize: '2rem',lineHeight: '0.25rem'}}>Here is what you have for the today</span>
         </div>
         <div className="cardsContainer">
-          {data.map((hotel:any,i:number)=>(<HotelCard key={i} title={hotel.title} apiRef={hotel.apiRef} reservationsData={reservationsData} setReservationsData={setReservationsData}/>))}
+          {data.map((hotel:any,i:number)=>(<HotelCard key={i} title={hotel.name} apiRef={hotel.link} reservationsData={reservationsData} setReservationsData={setReservationsData}/>))}
         </div>
         <div className="reservationContainer">
           <h1 style={{fontSize: '2rem',paddingLeft: '2rem', color: '#CF8F24'}}>Reservations </h1>

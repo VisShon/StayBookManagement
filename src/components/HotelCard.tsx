@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import '../styles/HotelCard.css';
+import '../styles/HotelCard.scss';
 import axios from 'axios'
 function HotelCard({title, setReservationsData,reservationsData,apiRef}:any) {
 

@@ -1,11 +1,11 @@
 import React from 'react'
-import '../styles/ReservationCard.css'
+import '../styles/ReservationCard.scss'
 function HotelReservationCard({plans,name, email ,checkIn, checkOut, amountPaid}:any) {
   return (
     <>
       <div className="reservationCard">
       
-      <div>
+        <div>
           <h2 className="title">{name}</h2>
           <p className="description">{email}</p>
         </div>

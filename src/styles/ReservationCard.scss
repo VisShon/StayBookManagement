@@ -1,5 +1,7 @@
+@import 'colors';
+
 .reservationCard{
-  box-shadow: 0 0 10px #d5d5d5;
+  box-shadow: 0 0 10px $shadow;
   border-radius: 0.5rem;
   margin-top: 1rem;
   display: flex;
@@ -12,8 +14,10 @@
 }
 .reservationCardRoomContainer{
   position: relative;
+  display: flex;
+  flex-direction: column;
   z-index: 0;
-  border:solid  #CF8F24;
+  border:solid $main;
   border-width: 0 1px 1px 1px;
   border-radius: 0 0 0.5rem 0.5rem;
   padding:1rem;
@@ -21,7 +25,7 @@
 }
 
 .reservationCard:hover {
-  box-shadow: 2px 2px 10px #e8e8e8;;
+  box-shadow: 2px 2px 10px $shadow;
   transform: scale(1.01);
 }
 
@@ -33,7 +37,7 @@
 
 .title {
   font-weight: 500;
-  background: linear-gradient(to right,#1999A8,#1CAF95);
+  background: $gradient;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size:1.5rem;

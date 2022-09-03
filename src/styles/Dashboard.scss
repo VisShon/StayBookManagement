@@ -1,3 +1,4 @@
+@import 'colors';
 
 .headingContainer{
   display: flex;
@@ -5,13 +6,14 @@
   align-items: center;
   width: 100%;
   height:20rem;
-  background: linear-gradient(to right,#1999A8,#1CAF95);
+  background: $gradient;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 
 .mainContainer {
+  cursor:default;
   width: screen;
   padding-left:2rem;
   padding-right:2rem;
@@ -20,12 +22,18 @@
 }
 
 .reservationContainer{
+  cursor:default;
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-bottom: 1rem;
   border-radius:1rem;
   align-items: center;
+  .Book{
+    margin-top: 1rem;
+    cursor: pointer;
+    height:50%;
+  }
 }
 
 .cardsContainer {
