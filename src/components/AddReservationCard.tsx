@@ -1,14 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import '../styles/AllHotels.scss';
+import axios from 'axios';
+import emailjs from '@emailjs/browser'
 
-function AddReservationCard({hotelName, hotelDescription, roomData}:any) {
+function AddReservationCard({hotelName, hotelDescription, hotelApiRef, roomData}:any) {
 
-  const[selected,setSelected] = useState(false)
+  const[selected,setSelected] = useState('')
   const[plans,setPlans] = useState<any[]>([])
 
-  const addReservation = () =>{
 
-  }
+  const[username,setUsername] = useState('')
+  const[email,setEmail] = useState('')
+  const[price,setPrice] = useState('')
+  const[checkIn,setCheckIn] = useState('')
+  const[checkOut,setCheckOut] = useState('')
+  const[roomPlan,setroomPlan] = useState<any[]>([])
+
+  
+  const addReservation = async () =>{
+    setSelected('');
+    let templateParams = {
+      to_name:email,
+    }
+    const mail = await emailjs.send('service_mv03hwf','template_dysx4ir',templateParams,'6HGQvyzipY4qgGkWm')
+    .then(function(response) {
+    }, function(error) {
+      console.log(error)
+    });
+    const result = await axios.post(`http://localhost:8000/api${hotelApiRef}/setReservations`,{
+      username: username,
+      email: email,
+      checkIn: checkIn,
+      checkOut: checkOut,
+      amountPaid: price,
+      selectedPlans:roomPlan,
+    })
+    setroomPlan([]);
+    setUsername('');
+    setEmail('');
+    setCheckIn('');
+    setCheckOut('');
+    setPrice('');
+  }    
 
   return (
     <>
@@ -19,50 +52,45 @@ function AddReservationCard({hotelName, hotelDescription, roomData}:any) {
         </div>
 
         <div className="roomContainer">
-          {Object.values(roomData).map((room:any,i:number) =>(<>
-            <div className="container" key={i} onClick={() => {
-              setSelected(prev=>!prev)
+
+          {Object.values(roomData).map((room:any,i:number) =>(            
+          <div className={!(selected==room.type)?("container"):("container-selected")} key={i} onClick={() => {
+              !(selected==room.type)?setSelected(room.type):setSelected('');
               setPlans(Object.values(room.plans))
             }}>
+
               <p className="description">{room.type}</p>
               <h2 className="title">{room.totalRooms}</h2>
-            </div>
-          </>))}
+
+            </div>))}
         </div>
      </div>
-
-     
-     {/* 
-        username: localStorage.getItem('name'),
-        email: localStorage.getItem('email'),
-        checkIn: checkIn,
-        checkOut: checkOut,
-        amountPaid: price,
-        selectedPlans:plans, 
-      */}
 
 
      {selected&&<div className="addReserationContainer">
            <div className="container">
-            <input placeholder="username"></input>
-            <input placeholder="email"></input>
-            <input placeholder="price" ></input>
+            <input value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="username"></input>
+            <input value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="email"></input>
+            <input value={price} onChange={(e)=>setPrice(e.target.value)} placeholder="price" ></input>
            </div>
 
            <div className="container">
             Enter Check In
-            <input type="date"></input>
+            <input value={checkIn} onChange={(e)=>setCheckIn(e.target.value)} type="date"></input>
             Enter Check Out
-            <input type="date"></input>
+            <input value={checkOut} onChange={(e)=>setCheckOut(e.target.value)} type="date"></input>
            </div>
 
            <div className="container">
             Room Types
             {plans.map((item, index) =>
-            (<div className="planType">{item.title}</div>))}
+            (<button onClick={()=>setroomPlan([...roomPlan, {...plans[index], roomType:selected}])} 
+                  className={!(roomPlan.filter(res=>res.title == item.title))?("planType"):("planType-selected")} 
+                  key={index}>
+              {item.title}</button>))}
            </div>
 
-           <div className="Book">Done</div>
+           <div onClick={addReservation} className="Book">Done</div>
      </div>}
     </>
   )
