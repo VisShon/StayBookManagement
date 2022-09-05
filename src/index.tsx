@@ -4,6 +4,7 @@ import './index.css';
 import Dashboard from './pages/Dashboard';
 import AddReservations from './pages/AddReservations';
 import Login from './pages/Login';
+import NoAccess from './pages/NoAccess';
 import { Routes,Route,BrowserRouter } from 'react-router-dom';
 import {AuthProvider} from './context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
@@ -27,6 +28,7 @@ root.render(
             <Route  path='/addReservations' element={<AddReservations/>}/>
           </Route>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/noAccess" element={<NoAccess/>}/>
         </Routes>
       </AuthProvider>
     </BrowserRouter>

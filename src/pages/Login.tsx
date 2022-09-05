@@ -13,8 +13,14 @@ function Login() {
 
   const onClickHandler = async ()=>{
     userEmail?setError(false):setError(true);
-    await Login(userEmail,password);
-    email?navigate('/'):navigate('/NoAccess');
+    try{
+      await Login(userEmail,password);
+      navigate('/');
+    }
+    catch(err){
+      navigate('/NoAccess');
+    }
+
   }
   return (
     <div  className = "bgCard">
