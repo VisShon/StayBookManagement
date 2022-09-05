@@ -1,6 +1,13 @@
 import React from 'react'
 import '../styles/ReservationCard.scss'
-function HotelReservationCard({plans,name, email ,checkIn, checkOut, amountPaid}:any) {
+import axios from 'axios';
+function HotelReservationCard({plans,name, email ,checkIn, checkOut, amountPaid,hotelName}:any) {
+
+  const onClickHandler = async() => {
+    const res = await axios.post(`http://localhost:8000/api${hotelName}/removeReservation`,{username:name,amountPaid:amountPaid})
+  }
+
+
   return (
     <>
       <div className="reservationCard">
@@ -15,7 +22,10 @@ function HotelReservationCard({plans,name, email ,checkIn, checkOut, amountPaid}
           <h2 className="title">Check Out {checkOut.substring(0, 10)}</h2>
         </>
 
-        <h5  style ={{color: '#CF8F24', fontSize:'1.5rem'}}>&#8377;{amountPaid}</h5>
+        <div>
+          <h5  style ={{color: '#CF8F24', fontSize:'1.5rem'}}>&#8377;{amountPaid}</h5>
+          <div className='Book' onClick={onClickHandler}>Check Out</div>
+        </div>
      </div>
      <div className="reservationCardRoomContainer">
       {Object.values(plans).map((item:any, index:number) =>(<div className="reservationCardRoom" key={index}>

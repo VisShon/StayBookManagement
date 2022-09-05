@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import '../styles/HotelCard.scss';
 import axios from 'axios'
-function HotelCard({title, setReservationsData,reservationsData,apiRef}:any) {
+function HotelCard({title, setReservationsData,reservationsData,apiRef,setHotelName}:any) {
 
   const [data,setData] = useState([]);
   
@@ -13,6 +13,7 @@ function HotelCard({title, setReservationsData,reservationsData,apiRef}:any) {
   },[])
 
   const onClickHandler = () => {
+    setHotelName(apiRef);
     setReservationsData(data);
   }
 

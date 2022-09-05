@@ -5,7 +5,7 @@ import '../styles/Dashboard.scss';
 import axios from 'axios';
 
 function MainDashboard({getData}:any) {
-
+  const [hotelName,setHotelName] = useState('');
   const [data,setData] =  useState<any[]>([])
   const [reservationsData,setReservationsData] =  useState<any[]>([])
   
@@ -26,11 +26,11 @@ function MainDashboard({getData}:any) {
           <span style={{fontSize: '2rem',lineHeight: '0.25rem'}}>Here is what you have for the today</span>
         </div>
         <div className="cardsContainer">
-          {data.map((hotel:any,i:number)=>(<HotelCard key={i} title={hotel.name} apiRef={hotel.link} reservationsData={reservationsData} setReservationsData={setReservationsData}/>))}
+          {data.map((hotel:any,i:number)=>(<HotelCard key={i} setHotelName={setHotelName} title={hotel.name} apiRef={hotel.link} reservationsData={reservationsData} setReservationsData={setReservationsData}/>))}
         </div>
         <div className="reservationContainer">
           <h1 style={{fontSize: '2rem',paddingLeft: '2rem', color: '#CF8F24'}}>Reservations </h1>
-          {reservationsData.map((res,i)=>(<ReservationCard plans={res.selectedPlans} name={res.username} email={res.email} checkIn={res.checkIn} checkOut={res.checkOut} amountPaid={res.amountPaid} />))}
+          {reservationsData.map((res,i)=>(<ReservationCard  hotelName={hotelName} plans={res.selectedPlans} name={res.username} email={res.email} checkIn={res.checkIn} checkOut={res.checkOut} amountPaid={res.amountPaid} />))}
         </div>
 
       </div>
