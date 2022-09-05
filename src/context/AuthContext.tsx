@@ -1,12 +1,12 @@
 import React, { useEffect, useState, createContext } from "react";
 import {auth} from '../firebase';
-import {GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {signInWithEmailAndPassword,signOut } from "firebase/auth";
 
 export type AuthContextProps = {
     username: string | undefined;
     email: string | undefined;
-	phone: string | undefined;
 	Login: Function;
+	SignOut:Function;
 };
 
 
@@ -18,27 +18,28 @@ export const AuthContext = createContext<AuthContextProps>({} as AuthContextProp
 	
 export const AuthProvider = ({children}:props) =>{
 
-	const Login = () => {
-		const provider = new GoogleAuthProvider();
-		return signInWithPopup(auth,provider)
+	const Login = (email: string | undefined,password: string | undefined) => {
+		return signInWithEmailAndPassword(auth,email!,password!);
+	}
+
+	const SignOut = (auth: any) => {
+		return signOut(auth);
 	}
 
 	const[username,setUsername] = useState<string|undefined>()
 	const[email,setEmail] = useState<string|undefined>()
-	const[phone,setPhone] = useState<string|undefined>()
 
 	useEffect(() =>{
 		const unscubscribe = auth.onAuthStateChanged(user=>{
 			setUsername(user?.displayName!);
 			setEmail(user?.email!);
-			setPhone(user?.phoneNumber!);
 		})
 		return unscubscribe;
 	},[])	
 
 
 	return (
-		<AuthContext.Provider value={{username,email,phone,Login}}>
+		<AuthContext.Provider value={{username,email,Login,SignOut}}>
 			{children}
 		</AuthContext.Provider>
   )

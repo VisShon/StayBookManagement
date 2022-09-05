@@ -3,6 +3,7 @@ import HotelCard from '../components/HotelCard';
 import ReservationCard from '../components/ReservationCard';
 import '../styles/Dashboard.scss';
 import axios from 'axios';
+import Navbar from '../components/NavBar';
 
 function MainDashboard({getData}:any) {
   const [hotelName,setHotelName] = useState('');
@@ -20,6 +21,7 @@ function MainDashboard({getData}:any) {
 
   return (
     <div className = "wrapper">
+      <Navbar/>
       <div className="mainContainer">
         <div className="headingContainer">
           <h2 style={{fontSize: '5rem'}}> Good Morning </h2>
