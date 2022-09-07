@@ -34,7 +34,7 @@ function AddReservationCard({hotelName, hotelDescription, hotelApiRef, roomData}
       checkOut: checkOut,
       amountPaid: price,
       selectedPlans:roomPlan,
-    })
+    },{headers:{Authorization: `bearer ${sessionStorage['user']}`}})
     setroomPlan([]);
     setUsername('');
     setEmail('');

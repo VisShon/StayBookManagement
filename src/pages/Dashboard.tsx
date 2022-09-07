@@ -4,6 +4,8 @@ import ReservationCard from '../components/ReservationCard';
 import '../styles/Dashboard.scss';
 import axios from 'axios';
 import Navbar from '../components/NavBar';
+import refreshImage from '../images/refresh.svg';
+
 
 function MainDashboard({getData}:any) {
   const [hotelName,setHotelName] = useState('');
@@ -28,11 +30,12 @@ function MainDashboard({getData}:any) {
           <span style={{fontSize: '2rem',lineHeight: '0.25rem'}}>Here is what you have for the today</span>
         </div>
         <div className="cardsContainer">
-          {data.map((hotel:any,i:number)=>(<HotelCard key={i} setHotelName={setHotelName} title={hotel.name} apiRef={hotel.link} reservationsData={reservationsData} setReservationsData={setReservationsData}/>))}
+          {data.map((hotel:any,i:number)=>(<HotelCard key={i} setHotelName={setHotelName} title={hotel.name} apiRef={hotel.link}  setReservationsData={setReservationsData}/>))}
         </div>
         <div className="reservationContainer">
           <h1 style={{fontSize: '2rem',paddingLeft: '2rem', color: '#CF8F24'}}>Reservations </h1>
-          {reservationsData.map((res,i)=>(<ReservationCard  hotelName={hotelName} plans={res.selectedPlans} name={res.username} email={res.email} checkIn={res.checkIn} checkOut={res.checkOut} amountPaid={res.amountPaid} />))}
+          <a onClick={()=>window.location.reload()} style={{width: '1rem'}}><img src={refreshImage} className="refresh"/></a>
+          {reservationsData.map((res,i)=>(<ReservationCard  hotelName={hotelName} plans={res.selectedPlans} name={res.username} email={res.email} checkIn={res.checkIn} checkOut={res.checkOut} amountPaid={res.amountPaid} key={i} />))}
         </div>
 
       </div>

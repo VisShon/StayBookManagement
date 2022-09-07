@@ -11,6 +11,20 @@
   -webkit-text-fill-color: transparent;
 }
 
+.refresh{
+  cursor: pointer;
+  width: 100%;
+  transition: scale 600ms;
+  
+}
+.refresh:hover{
+  scale: 2;
+}
+.refresh:active{
+  transition: rotate 300ms;
+  rotate: 90deg;
+  transition: scale 1 600ms;
+}
 
 .mainContainer {
   cursor:default;
