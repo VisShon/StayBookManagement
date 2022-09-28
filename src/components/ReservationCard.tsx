@@ -4,7 +4,7 @@ import axios from 'axios';
 function HotelReservationCard({plans,name, email ,checkIn, checkOut, amountPaid,hotelName}:any) {
 
   const onClickHandler = async() => {
-    return await axios.post(`http://localhost:8000/api${hotelName}/removeReservation`,
+    return await axios.post(`http://35.212.128.152/api${hotelName}/removeReservation`,
       {username:name,amountPaid:amountPaid},
       {headers:{Authorization: `bearer ${sessionStorage['user']}`}})
   }

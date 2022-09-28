@@ -14,7 +14,7 @@ function MainDashboard({getData}:any) {
   
   useEffect(()=>{
     const getHotelData = async () => {
-      const result = await axios.get(`http://localhost:8000/api/getAllData`).then((value) => {
+      const result = await axios.get(`http://35.212.128.152/api/getAllData`).then((value) => {
         setData(Object.values(value.data))
       });
     }
