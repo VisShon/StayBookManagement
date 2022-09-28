@@ -15,10 +15,6 @@ function AddReservations() {
     getHotelData();
   },[])
 
-  const addHotelData = () => {
-
-  }
-
   return (
     <div className="reservationContainer">
       <Navbar/>
