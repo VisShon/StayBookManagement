@@ -7,7 +7,7 @@ function HotelCard({title, setReservationsData,apiRef,setHotelName}:any) {
   
   useEffect(() =>{
     const getData = async () =>{
-      return await axios.get(`http://localhost:8000/api/${apiRef}/getReservations`).then(res=>setData(Object.values(res.data)))
+      return await axios.get(`http://beta.staybook.in/api/${apiRef}/getReservations`).then(res=>setData(Object.values(res.data)))
     }
     getData();
   },[])
