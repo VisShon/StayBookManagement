@@ -27,7 +27,7 @@ function AddReservationCard({hotelName, hotelDescription, hotelApiRef, roomData}
     }, function(error) {
       console.log(error)
     });
-    const result = await axios.post(`http://localhost:8000/api/${hotelApiRef}/setReservations`,{
+    const result = await axios.post(`https://staybook.in/api/${hotelApiRef}/setReservations`,{
       username: username,
       email: email,
       checkIn: checkIn,
