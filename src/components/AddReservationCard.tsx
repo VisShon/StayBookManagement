@@ -27,7 +27,7 @@ function AddReservationCard({hotelName, hotelDescription, hotelApiRef, roomData}
     }, function(error) {
       console.log(error)
     });
-    const result = await axios.post(`http://35.212.128.152/api${hotelApiRef}/setReservations`,{
+    const result = await axios.post(`http://localhost:8000/api/${hotelApiRef}/setReservations`,{
       username: username,
       email: email,
       checkIn: checkIn,
@@ -53,10 +53,10 @@ function AddReservationCard({hotelName, hotelDescription, hotelApiRef, roomData}
 
         <div className="roomContainer">
 
-          {Object.values(roomData).map((room:any,i:number) =>(            
+          {roomData.map((room:any,i:number) =>(            
           <div className={!(selected==room.type)?("container"):("container-selected")} key={i} onClick={() => {
               !(selected==room.type)?setSelected(room.type):setSelected('');
-              setPlans(Object.values(room.plans))
+              setPlans(room.plans)
             }}>
 
               <p className="description">{room.type}</p>
