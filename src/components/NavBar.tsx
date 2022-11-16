@@ -2,6 +2,8 @@ import React from 'react'
 import '../styles/NavBar.scss';
 import logo from "../images/logo.png"
 import { Link } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
+
 function NavBar() {
   return (
       <div className="navbar">

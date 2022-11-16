@@ -27,11 +27,13 @@ function AddReservations() {
   },[])
 
   return (
-    <div className="reservationContainer">
-      <Navbar/>
-      {data.map((hotel,i)=>(<AddReservationCard hotelName={hotel.name} hotelApiRef={hotel.slug.current} hotelDescription={hotel.address} roomData={hotel.rooms} key={i}/>))}
-      <a href="https://staybook.sanity.studio/desk" className="Book">+</a>
-    </div>
+    <>
+      <Navbar/>   
+      <div className="reservationContainer">
+        {data.map((hotel,i)=>(<AddReservationCard hotelName={hotel.name}  hotelApiRef={hotel.slug.current} hotelDescription={hotel.address} roomData={hotel.rooms} key={i}/>))}
+        <a href="https://staybook.sanity.studio/desk" className="Book">+</a>
+      </div>
+    </>
   )
 }
 

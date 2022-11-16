@@ -16,13 +16,26 @@ function AddReservationCard({hotelName, hotelDescription, hotelApiRef, roomData}
   const[checkOut,setCheckOut] = useState('')
   const[roomPlan,setroomPlan] = useState<any[]>([])
 
-  
+  console.log(plans)
   const addReservation = async () =>{
     setSelected('');
     let templateParams = {
-      to_name:email,
+      to_name: email,
+      hotelName: hotelName,
+      checkIn: checkIn.toString(),
+      checkOut: checkOut.toString(),
+      roomNumbers: plans.length.toString(),
+      // guests: roomPlan.guests.toString(),
+      hotelContact: "+918373929299",
+      // address: address,
+      status:`Paid ₹${price}/-`
     }
-    const mail = await emailjs.send('service_pz9e3th','template_i78ka1b',templateParams,'bE7FBsdP5YFb4U6LK')
+    const mail = await emailjs.send(
+      'service_pz9e3th',
+      'template_i78ka1b',
+      templateParams,
+      'bE7FBsdP5YFb4U6LK'
+    )
     .then(function(response) {
     }, function(error) {
       console.log(error)
