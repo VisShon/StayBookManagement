@@ -4,11 +4,11 @@ import axios from 'axios';
 function HotelReservationCard({plans,name, email ,checkIn, checkOut, amountPaid, apiRef}:any) {
 
   const onClickHandler = async() => {
-    console.log(apiRef)
-     const res = await axios.post(`https://staybook.in/api/${apiRef}/removeReservation`,
+    
+    console.log(apiRef);
+    const res = await axios.post(`https://staybook.in/api/${apiRef}/removeReservation`,
       {username:name,amountPaid:amountPaid},
       {headers:{Authorization: `bearer ${sessionStorage['user']}`}})
-      
   }
 
 

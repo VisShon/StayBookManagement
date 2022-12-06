@@ -7,7 +7,7 @@ import PrivateRoute from './PrivateRoute';
 function NavBar() {
   return (
       <div className="navbar">
-          <Link to='/' className="logo"><img src={logo} style={{height: '100%'}}/></Link>
+          <Link to='/' className="logo"><img src={logo} style={{height: '100%'}} alt={'SatyBook'}/></Link>
           <Link to='/addReservations' className = "Book">Add</Link>
       </div>
   )
