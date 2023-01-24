@@ -14,6 +14,7 @@ function HotelCard({title, setReservationsData,apiRef,setApiRef}:any) {
 
   const onClickHandler = () => {
     setApiRef(apiRef);
+    data.sort((a: any, b: any) => b.checkIn.localeCompare(a.checkIn))
     setReservationsData(data);
   }
 
